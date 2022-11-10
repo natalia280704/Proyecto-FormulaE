@@ -1,0 +1,127 @@
+/**
+
+ * @file carreraFormE.c
+ * 
+ * @brief Simulador de carreras de Fórmula E en C. 
+ * 
+ * @details Este programa es el proyecto final que simula realizar una carrera de Fórmula E.
+ *
+ * @author Programa creado por: Diego Bravo Pérez
+ * 
+ * @date Fecha de creación: 10 de Noviembre del 2022
+ * 
+ * @author Último en modificar: Diego Bravo Pérez
+ *
+ * @date Última fecha de creación: 10 de Noviembre del 2022
+ 
+ */
+
+#include <stdio.h>
+#include <stdlib.h> 
+#include <time.h>
+
+void mostrarInstrucciones(char instrucciones[], char author[]);
+int ingresarRangoNum(int limInf, int limSup);
+void limpiarBufer(void);
+int generarAleatorio(int inicio, int final);
+
+/**
+
+ @fn Función principal
+ @return Integer:0, indica que el programa se ejecuto de manera correcta
+
+ */
+
+
+int main (void)
+{
+  mostrarInstrucciones("Este programa es el proyecto final que simula realizar una carrera de Fórmula E.", "Diego Bravo Pérez");
+
+  
+  return 0;
+}
+
+/**
+
+  @fn Procedimiento que muestra las instrucciones del programa
+  @param String:instrucciones, String;autor
+ 
+ */
+
+void mostrarInstrucciones(char instrucciones[], char author[])
+{
+  printf("\nIntrucciones:\n\t%s\n\n", instrucciones);
+  printf("Autor:\n\t%s\n\n", author);
+
+  printf("Presione la tecla \"enter\" para continuar.\n");
+  getchar();
+
+  system("clear");
+
+  return;
+}
+
+/**
+   @fn Función que pide un número entero dentro de un rango de números.
+   @param Integer:limInf, Integer:limSup
+   @return Integer:numero (válido)
+*/
+
+int ingresarRangoNum(int limInf, int limSup)
+{
+  int numero, validar;
+  float R;
+
+  do
+    {
+      printf("Ingresa un número entero de %d y %d: ", limInf, limSup);
+
+      validar = scanf(" %f", &R);
+
+      limpiarBufer();
+
+      numero = R;
+
+	if (numero != R)
+	  {
+	    validar = 0;
+	  }
+
+      if (numero < limInf || numero > limSup)
+	{
+	  printf("\aDebes ingresar un número válido.\n\n");
+	  validar = 0;
+	}
+    } while(validar == 0);
+
+  return numero;
+}
+
+/**
+   @fn FUnción para limpiar el bufer de memoria
+*/
+
+void limpiarBufer(void)
+{
+  int limpiar;
+
+  while ((limpiar = getchar()) != '\n' && limpiar != EOF) {}
+
+  return;
+}
+
+/**
+   @fn Función que genera un número aleatorio con un rango predefinido
+   @param Integer:inicio, Integer:final
+   @return Integer:aleatorio
+*/
+
+int generarAleatorio(int inicio, int final)
+{
+  int aleatorio;
+
+    aleatorio = inicio + rand() % (final - inicio + 1);
+
+  return aleatorio;
+}
+
