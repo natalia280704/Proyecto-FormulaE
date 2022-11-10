@@ -24,6 +24,7 @@ void mostrarInstrucciones(char instrucciones[], char author[]);
 int ingresarRangoNum(int limInf, int limSup);
 void limpiarBufer(void);
 int generarAleatorio(int inicio, int final);
+void menuCatal(void);
 
 /**
 
@@ -46,6 +47,7 @@ int main (void)
       printf("\t2) Simulador de carreras.\n");
       printf("\t3) Resultado de carrera anterior.\n");
       printf("\t4) Salir.\n");
+      printf("\n");
 
       opcion = ingresarRangoNum(1, 4);
 
@@ -53,6 +55,7 @@ int main (void)
       {
       case 1:
 	system("clear");
+	menuCatal();
 	break;
 
       case 2:
@@ -65,11 +68,6 @@ int main (void)
 
       case 4:
 	system("clear");
-	break;
-
-      default:
-	system("clear");
-	printf("\aDebes ingresar un número válido.\n\n");
 	break;
       }
 
@@ -111,7 +109,7 @@ int ingresarRangoNum(int limInf, int limSup)
 
   do
     {
-      printf("Ingresa un número entero de %d y %d: ", limInf, limSup);
+      printf("Ingresa una opción (%d a %d): ", limInf, limSup);
 
       validar = scanf(" %f", &R);
 
@@ -126,7 +124,7 @@ int ingresarRangoNum(int limInf, int limSup)
 
       if (numero < limInf || numero > limSup)
 	{
-	  printf("\aDebes ingresar un número válido.\n\n");
+	  printf("\a\nDebes ingresar una opción válida.\n\n");
 	  validar = 0;
 	}
     } while(validar == 0);
@@ -162,3 +160,49 @@ int generarAleatorio(int inicio, int final)
   return aleatorio;
 }
 
+/**
+   @fn Función que muestra el menú del catálogo.
+*/
+
+void menuCatal(void)
+{
+  int opcion;
+
+  do
+    {
+      printf("Catálogo:\n\n");
+      printf("\t1) Carreras.\n");
+      printf("\t2) Equipos.\n");
+      printf("\t3) Países.\n");
+      printf("\t4) Pilotos.\n");
+      printf("\t5) Regresar a menú principal.\n");
+      printf("\n");
+
+      opcion = ingresarRangoNum(1, 5);
+
+      switch(opcion)
+      {
+      case 1:
+	system("clear");
+	break;
+
+      case 2:
+	system("clear");
+	break;
+
+      case 3:
+	system("clear");
+	break;
+
+      case 4:
+	system("clear");
+	break;
+
+      case 5:
+	system("clear");
+	break;
+      }
+
+    } while(opcion != 5);
+}
+  
