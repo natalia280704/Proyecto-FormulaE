@@ -25,6 +25,10 @@ int ingresarRangoNum(int limInf, int limSup);
 void limpiarBufer(void);
 int generarAleatorio(int inicio, int final);
 void menuCatal(void);
+void menuCarr(void);
+void menuEquip(void);
+void menuPais(void);
+void menuPilot(void);
 
 /**
 
@@ -184,6 +188,55 @@ void menuCatal(void)
       {
       case 1:
 	system("clear");
+  menuCarr();
+	break;
+
+      case 2:
+	system("clear");
+  menuEquip();
+	break;
+
+      case 3:
+	system("clear");
+  menuPais();
+	break;
+
+      case 4:
+	system("clear");
+  menuPilot();
+	break;
+
+      case 5:
+	system("clear");
+	break;
+      }
+
+    } while(opcion != 5);
+}
+
+/**
+   @fn Función que muestra el menú de las carreras
+*/
+
+void menuCarr(void)
+{
+  int opcion;
+
+  do
+    {
+      printf("Carreras:\n\n");
+      printf("\t1) Agregar Carrera.\n");
+      printf("\t2) Modificar Carrera.\n");
+      printf("\t3) Eliminar carrera.\n");
+      printf("\t4) Regresar al catálogo.\n");
+      printf("\n");
+
+      opcion = ingresarRangoNum(1, 4);
+
+      switch(opcion)
+      {
+      case 1:
+	system("clear");
 	break;
 
       case 2:
@@ -197,12 +250,129 @@ void menuCatal(void)
       case 4:
 	system("clear");
 	break;
+      }
 
-      case 5:
+    } while(opcion != 4);
+}
+
+/**
+  @fn Función que muestra el menú de equipos
+*/
+
+void menuEquip(void)
+{
+  int opcion;
+
+  do
+    {
+      printf("Equipos:\n\n");
+      printf("\t1) Agregar Equipo.\n");
+      printf("\t2) Modificar Equipo.\n");
+      printf("\t3) Eliminar Equipo.\n");
+      printf("\t4) Regresar al catálogo.\n");
+      printf("\n");
+
+      opcion = ingresarRangoNum(1, 4);
+
+      switch(opcion)
+      {
+      case 1:
+	system("clear");
+	break;
+
+      case 2:
+	system("clear");
+	break;
+
+      case 3:
+	system("clear");
+	break;
+
+      case 4:
 	system("clear");
 	break;
       }
 
-    } while(opcion != 5);
+    } while(opcion != 4);
 }
-  
+
+/**
+  @fn Función que despliega el menú de los Países
+*/
+void menuPais(void)
+{
+  int opcion;
+
+  do
+    {
+      printf("Paises:\n\n");
+      printf("\t1) Agregar País.\n");
+      printf("\t2) Modificar País.\n");
+      printf("\t3) Eliminar País.\n");
+      printf("\t4) Regresar al catálogo.\n");
+      printf("\n");
+
+      opcion = ingresarRangoNum(1, 4);
+
+      switch(opcion)
+      {
+      case 1:
+	system("clear");
+	break;
+
+      case 2:
+	system("clear");
+	break;
+
+      case 3:
+	system("clear");
+	break;
+
+      case 4:
+	system("clear");
+	break;
+      }
+
+    } while(opcion != 4);
+}
+
+/**
+  @fn Función que despliega el menú de pilotos
+*/
+
+void menuPilot(void)
+{
+  int opcion;
+
+  do
+    {
+      printf("Pilotos:\n\n");
+      printf("\t1) Agregar Piloto.\n");
+      printf("\t2) Modificar Piloto.\n");
+      printf("\t3) Eliminar Piloto.\n");
+      printf("\t4) Regresar al catálogo.\n");
+      printf("\n");
+
+      opcion = ingresarRangoNum(1, 4);
+
+      switch(opcion)
+      {
+      case 1:
+	system("clear");
+	break;
+
+      case 2:
+	system("clear");
+	break;
+
+      case 3:
+	system("clear");
+	break;
+
+      case 4:
+	system("clear");
+	break;
+      }
+
+    } while(opcion != 4);
+}
