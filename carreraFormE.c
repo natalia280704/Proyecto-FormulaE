@@ -35,8 +35,45 @@ int generarAleatorio(int inicio, int final);
 
 int main (void)
 {
+  int opcion;
+  
   mostrarInstrucciones("Este programa es el proyecto final que simula realizar una carrera de Fórmula E.", "Diego Bravo Pérez");
 
+  do
+    {
+      printf("Menú principal:\n\n");
+      printf("\t1) Catálogo.\n");
+      printf("\t2) Simulador de carreras.\n");
+      printf("\t3) Resultado de carrera anterior.\n");
+      printf("\t4) Salir.\n");
+
+      opcion = ingresarRangoNum(1, 4);
+
+      switch(opción)
+      {
+      case 1:
+	system("clear");
+	break;
+
+      case 2:
+	system("clear");
+	break;
+
+      case 3:
+	system("clear");
+	break;
+
+      case 4:
+	system("clear");
+	break;
+
+      default:
+	system("clear");
+	printf("\aDebes ingresar un número válido.\n\n");
+	break;
+      }
+
+    } while(opcion != 4);
   
   return 0;
 }
