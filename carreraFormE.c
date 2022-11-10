@@ -49,7 +49,7 @@ int main (void)
 
       opcion = ingresarRangoNum(1, 4);
 
-      switch(opción)
+      switch(opcion)
       {
       case 1:
 	system("clear");
