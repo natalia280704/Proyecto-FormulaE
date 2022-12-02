@@ -1,8 +1,8 @@
-carreraFormE.: carreraFormE.o
-	gcc carreraFormE.o -o carreraFormE
+simuladorFormE.: simuladorFormE.o
+	gcc simuladorFormE.o -o simuladorFormE
 
-carreraFormE.o: carreraFormE.c
-	gcc -c carreraFormE.c
+simuladorFormE.o: simuladorFormE.c
+	gcc -c simuladorFormE.c
 
 clean:
 	rm *.o
